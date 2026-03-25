@@ -1,9 +1,9 @@
 version: "3.8"
 
 services:
-  telegram-bot-api:
+  self-hosted-telegram-bot-api:
     image: aiogram/telegram-bot-api:latest
-    container_name: telegram-bot-api
+    container_name: self-hosted-telegram-bot-api
     restart: unless-stopped
 
     networks:
@@ -16,7 +16,7 @@ services:
       TELEGRAM_LOCAL: ${TELEGRAM_LOCAL:-1}
 
     volumes:
-      - telegram-bot-api-data:/var/lib/telegram-bot-api
+      - self-hosted-telegram-bot-api-data:/var/lib/self-hosted-telegram-bot-api
 
     ports:
       - "8081:8081"
@@ -29,7 +29,7 @@ services:
       start_period: 20s
 
 volumes:
-  telegram-bot-api-data:
+  self-hosted-telegram-bot-api-data:
     driver: local
 
 networks:
