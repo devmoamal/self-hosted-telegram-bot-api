@@ -18,9 +18,6 @@ services:
     volumes:
       - self-hosted-telegram-bot-api-data:/var/lib/self-hosted-telegram-bot-api
 
-    ports:
-      - "8081:8081"
-
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:8081"]
       interval: 30s
